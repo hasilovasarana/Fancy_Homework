@@ -1,0 +1,58 @@
+﻿@model IEnumerable<fancy_backend.Models.Latest_News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Fancy_Crud_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.latest_news_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.latest_news_subtitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.latest_news_item_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.latest_news_item_subtitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.latest_news_img)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.latest_news_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.latest_news_subtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.latest_news_item_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.latest_news_item_subtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.latest_news_img)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

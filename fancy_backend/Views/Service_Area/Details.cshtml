@@ -1,0 +1,61 @@
+﻿@model fancy_backend.Models.Service_Area
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Fancy_Crud_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service_Area</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service_subtitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service_subtitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service_item_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service_item_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service_icon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service_icon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service_item_subtitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service_item_subtitle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.service_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

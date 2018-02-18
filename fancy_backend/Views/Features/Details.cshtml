@@ -1,0 +1,51 @@
+﻿@model fancy_backend.Models.Feature
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Fancy_Crud_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Feature</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_img)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feature_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feature_url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

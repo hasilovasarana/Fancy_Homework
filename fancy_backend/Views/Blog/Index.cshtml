@@ -1,0 +1,119 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+     
+    <!--================Banner Area =================-->
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text_inner">
+                <h4>The ultimate guide to creative agency roles</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Archive</a></li>
+                    <li><a href="static.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Static Page</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--================End Banner Area =================-->
+    <!--================Static Area =================-->
+    <section class="static_area">
+        <div class="container">
+            <div class="static_inner">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="static_main_content">
+                            <div class="static_social">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-thumb-tack" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            @foreach (var item in ViewBag.blogs)
+                            {
+                                 <div class="static_img">
+                                    <img class="img-fluid" src="~/BlogUpload/@item.blog_img" alt="">
+                                  </div>
+                                <div class="static_text">
+                                    <h4>@item.blog_title</h4><br />
+                                    <p>@item.blog_content</p>
+
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <h6>“ </h6>
+                                        </div>
+                                        @foreach (var item1 in ViewBag.testimonials)
+                                        {
+                                            <div class="media-body">
+                                            <p>@item1.testimonials_slider_content</p>
+                                            <h5><a href="#">@item1.testimonials_slider_author</a> - CEO DeerCreative</h5>
+                                        </div>
+                                        }
+                                        
+                                    </div>
+                                </div> 
+                            }
+                                                   
+                           
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="right_sidebar_area">
+                            <aside class="right_widget r_news_widget">
+                                <div class="r_w_title">
+                                    <h3>Recent News</h3>
+                                </div>
+                                <div class="news_inner">
+                                    @foreach (var item in ViewBag.latest)
+                                    {
+                                        <div class="news_item">
+                                        <a href="#"><h4>@item.latest_news_item_title</h4></a>
+                                        <a href="#"><h6>February 18, 2018</h6></a>
+                                    </div>  
+                                    }
+                                                                      
+                                </div>
+                            </aside>
+                            <aside class="right_widget r_cat_widget">
+                                <div class="r_w_title">
+                                    <h3>Categories</h3>
+                                </div>
+                                @foreach (var item in ViewBag.categories)
+                                {
+                                <ul>
+                                    <li><a href="#">@item.category_name</a></li>
+                               
+                                </ul>
+                                }
+                               
+                            </aside>
+                            <aside class="right_widget r_tag_widget">
+                                <div class="r_w_title">
+                                    <h3>Popular Tags</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="#">Creative</a></li>
+                                    <li><a href="#">Unique</a></li>
+                                    <li><a href="#">Photography</a></li>
+                                    <li><a href="#">Music</a></li>
+                                    <li><a href="#">Wordpress Template</a></li>
+                                    <li><a href="#">Ideas</a></li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Static Area =================-->
+    

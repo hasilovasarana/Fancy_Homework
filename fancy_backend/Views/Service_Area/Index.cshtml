@@ -1,0 +1,60 @@
+﻿@model IEnumerable<fancy_backend.Models.Service_Area>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Fancy_Crud_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.service_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_subtitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_item_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_icon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.service_item_subtitle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+     
+        <td>
+            @Html.DisplayFor(modelItem => item.service_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_subtitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_item_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_icon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.service_item_subtitle)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.service_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.service_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.service_id })
+        </td>
+    </tr>
+}
+
+</table>
